@@ -1,0 +1,70 @@
+hr
+{
+    margin-top: 0%;
+    margin-bottom: 0%;
+    border: 1px solid #ffffff;
+}
+
+
+.statValues
+{
+    white-space: initial;
+    word-wrap: break-word;
+    line-height: 1.2;
+    display: inherit;
+    padding: 5%;
+    font-weight: 500;
+}
+
+.statLabel
+{
+    font-weight: 300;
+}
+
+.statBox
+{
+    height: 80px;
+    width: 70%;
+    border-radius: 10px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.statContainer
+{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1%;
+}
+
+
+.loading-shade
+{
+    position: fixed;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.253);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0%;
+    left:0;
+    height: 100%;
+    width: 100%;
+}
+
+::ng-deep .mat-progress-spinner circle{
+    stroke: #ffffff;
+}
+
+.error-class
+{
+    color: #ffffff;
+    font-size: larger;
+}
+
+.indication-message
+{
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}

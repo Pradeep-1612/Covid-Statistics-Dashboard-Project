@@ -1,0 +1,57 @@
+.header
+{
+    padding: 10px 20px;
+    padding-left: 7px;
+    background: #10069f;
+    color:"#ffffff";
+    background-image: linear-gradient(to right,#ff8282, #8080ff );
+    height: 50px;
+}
+
+.headerName
+{
+    font-size: large;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+mat-select
+{
+    height: 30px;
+    width: 35%;
+    background-color: #ffffff;
+    font-size: 14px;
+}
+
+
+.error-class
+{
+    color: #ffffff;
+    font-size: larger;
+}
+
+.loading-shade
+{
+    position: fixed;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.253);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0%;
+    left:0;
+    height: 100%;
+    width: 100%;
+}
+
+::ng-deep .mat-progress-spinner circle{
+    stroke: #ffffff;
+}
+
+.indication-message
+{
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}

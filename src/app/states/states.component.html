@@ -1,0 +1,61 @@
+<div class="loading-shade" *ngIf="mainLS || isErrorOccurred" style="display:flex; flex-direction: column;">
+
+    <div *ngIf="mainLS && !isErrorOccurred" class="indication-message">
+        <mat-spinner diameter="40">
+        </mat-spinner> &nbsp; &nbsp;
+        <span style="color: #ffffff">Loading . . . please wait !</span>
+    </div>
+    <div *ngIf="mainLS && isErrorOccurred">
+        <fa-icon [icon]="faFrownOpen" class="error-class indication-message">
+        </fa-icon> &nbsp; &nbsp;
+        <span class="error-class">Sorry, Something went wrong !</span>
+    </div>
+
+</div>
+
+<div *ngIf="!mainLS && !isErrorOccurred">
+    <div *ngIf="this.stateWiseData.length==0">
+        <div style="position: absolute; top:47%; left: 40%;">
+            <fa-icon [icon]="faExclamation" class="no-data">
+            </fa-icon> &nbsp; &nbsp;
+            <span class="no-data">Sorry, Data is not available</span>
+
+
+        </div>
+
+    </div>
+    <div *ngIf="this.stateWiseData.length>0" style="display: flex;justify-content: center;">
+        <div class="row" style="height: max-content;">
+
+            <div class="col-md-4" *ngFor="let state of stateWiseData">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover table-bordered">
+                        <tbody>
+                            <tr class="table-success">
+                                <td>State name</td>
+                                <td>{{state["stateName"]}}</td>
+                            </tr>
+                            <tr>
+                                <td>Confirmed</td>
+                                <td>{{state["confirmed"] | number : '1.0':'en-US' }}</td>
+                            </tr>
+                            <tr>
+                                <td>Active</td>
+                                <td>{{(state["confirmed"] - (state["recovered"] + state["deaths"])) | number :
+                                    '1.0':'en-US'}}</td>
+                            </tr>
+                            <tr>
+                                <td>Recovery</td>
+                                <td>{{state["recovered"]}}</td>
+                            </tr>
+                            <tr>
+                                <td>Death</td>
+                                <td>{{state["deaths"]}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

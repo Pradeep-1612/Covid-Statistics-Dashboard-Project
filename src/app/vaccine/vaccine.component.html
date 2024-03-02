@@ -1,0 +1,52 @@
+<div class="loading-shade" *ngIf="mainLS || isErrorOccurred" style="display:flex; flex-direction: column;">
+    <div *ngIf="mainLS && !isErrorOccurred" class="indication-message">
+        <mat-spinner diameter="40">
+        </mat-spinner> &nbsp; &nbsp;
+        <span style="color: #ffffff">Loading . . . please wait !</span>
+    </div>
+    <div *ngIf="mainLS && isErrorOccurred">
+        <fa-icon [icon]="faFrownOpen" class="error-class indication-message">
+        </fa-icon> &nbsp; &nbsp;
+        <span class="error-class">Sorry, Something went wrong !</span>
+    </div>
+
+</div>
+
+<div *ngIf="!mainLS && !isErrorOccurred">
+    <div *ngIf="!countryWiseVaccinatedData">
+        <div style="position: absolute; top:47%; left: 40%;">
+            <fa-icon [icon]="faExclamation" class="no-data">
+            </fa-icon> &nbsp; &nbsp;
+            <span class="no-data">Sorry, Data is not available</span>
+
+
+        </div>
+
+    </div>
+    <div *ngIf="countryWiseVaccinatedData" style="display: flex;justify-content: center;margin-top: 3%;">
+        <div class="row" style="width: 70%;">
+
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <tbody>
+                            <tr>
+                                <td>Admininistered</td>
+                                <td>{{countryWiseVaccinatedData["administered"] | number : '1.0':'en-US' }}</td>
+                            </tr>
+                            <tr class="table-success">
+                                <td>People Vaccinated</td>
+                                <td>{{countryWiseVaccinatedData["people_vaccinated"] | number : '1.0':'en-US' }}</td>
+                            </tr>
+                            <tr>
+                                <td>People Partially Vaccinated</td>
+                                <td>{{countryWiseVaccinatedData["people_partially_vaccinated"] | number : '1.0':'en-US'
+                                    }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+.sidenav_container
+{
+    min-width: 60px;
+    height: calc(100vh - 200px);
+}
+
+.logo
+{
+    height:40px;
+    object-fit: cover;
+    border-radius: 10%;
+}
+
+.active-list-item
+{
+    background-color: #ffffff !important;
+}
+
+.left-icon-text
+{
+    display: block;
+    font-size: small;
+    margin-top: -20%;
+    font-size: 12px;
+}
+
+.left-icon-text-container
+{
+    text-align: center;
+    display: inline-block;
+}
+
+.mat-list-base {
+
+    padding-top: 0%;
+}
+
+.user_menu
+{
+    background-image: linear-gradient(to right, #8080ff, #ff8282);
+}

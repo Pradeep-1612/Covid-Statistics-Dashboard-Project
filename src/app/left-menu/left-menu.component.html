@@ -1,0 +1,61 @@
+<div class="sidenav_container">
+
+    <div fxLayout="column" fxLayoutGap="10px" style="height:100%">
+        <div class="user_menu">
+            <mat-nav-list>
+                <a mat-list-item style="height: 50px;" href="https://www.userexperior.com" target="_blank">
+                    <img class="logo" [src]="assetPath+'/assets/images/UE_logo.png'" alt="">
+                </a>
+            </mat-nav-list>
+            <mat-divider></mat-divider>
+
+        </div>
+        <div>
+            <mat-nav-list style="padding-top:0%;">
+                <div style="height: 70px;padding-top: 15%;" [style]="rl1.isActive?'background-color:#ffffff':'background-image: linear-gradient(to right, #8080ff, #ff8282);'">
+                    <span routerLink="/home" #rl1="routerLinkActive" routerLinkActive="active-list-item">
+                        <a mat-list-item
+                            matTooltipPosition="right" matTooltip="Country wise analysis"
+                            matTooltipClass="matTooltipclass1">
+                            <div class="left-icon-text-container" [style.color]="rl1.isActive?'#10069f':'#ffffff'">
+                                <fa-icon [icon]="faHome" style="font-size: x-large;">
+                                </fa-icon>
+                                <span class="left-icon-text">Home</span>
+                            </div>
+                        </a>
+                    </span>
+                </div>
+
+                <div  style="height: 70px;padding-top: 15%;" [style]="rl2.isActive?'background-color:#ffffff':'background-image: linear-gradient(to right, #8080ff, #ff8282);'">
+                    <span routerLink="/states" #rl2="routerLinkActive" routerLinkActive="active-list-item">
+
+                        <a mat-list-item 
+                            matTooltipPosition="right" matTooltip="State wise analysis"
+                            matTooltipClass="matTooltipclass1" >
+                            <div class="left-icon-text-container" [style.color]="rl2.isActive?'#10069f':'#ffffff'">
+                                <fa-icon class="text-center" [icon]="faGlobe" style="font-size: x-large;">
+                                </fa-icon>
+                                <span class="left-icon-text">States</span>
+                            </div>
+                        </a>
+                    </span>
+                </div>
+
+                <div style="height: 70px;padding-top: 15%;" [style]="rl3.isActive?'background-color:#ffffff':'background-image: linear-gradient(to right, #8080ff, #ff8282);'">
+                    <span routerLink="/vaccine" #rl3="routerLinkActive" routerLinkActive="active-list-item">
+                        <a mat-list-item 
+                            matTooltipPosition="right" matTooltip="Vaccination analysis"
+                            matTooltipClass="matTooltipclass1">
+                            <div class="left-icon-text-container" [style.color]="rl3.isActive?'#10069f':'#ffffff'">
+                                <fa-icon [icon]="faSyringe" style="font-size: x-large;">
+                                </fa-icon>
+                                <span class="left-icon-text">Vaccine</span>
+                            </div>
+                        </a>
+                    </span>
+                </div>
+            </mat-nav-list>
+        </div>
+    </div>
+
+</div>

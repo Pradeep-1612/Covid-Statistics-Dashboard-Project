@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
+.matTooltipclass1
+{
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #10069f;
+    font-size: small;
+}

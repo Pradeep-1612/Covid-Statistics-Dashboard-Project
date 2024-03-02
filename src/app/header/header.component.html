@@ -1,0 +1,32 @@
+<div class="loading-shade" *ngIf="mainLS || isErrorOccurred" style="display:flex; flex-direction: column;">
+    <div *ngIf="mainLS && !isErrorOccurred" class="indication-message">
+        <mat-spinner diameter="40">
+        </mat-spinner> &nbsp; &nbsp;
+        <span style="color: #ffffff">Loading . . . please wait !</span>
+    </div>
+    <div *ngIf="mainLS && isErrorOccurred">
+        <fa-icon [icon]="faFrownOpen" class="error-class indication-message">
+        </fa-icon> &nbsp; &nbsp;
+        <span class="error-class">Sorry, Something went wrong !</span>
+    </div>
+</div>
+
+
+<div fxflex="row" fxlayoutAlign="center center" fxlayoutGap="10px" class="header">
+
+    <div class="row">
+        <div class="col-md-7" style="text-align: end;padding-right: 2.8%;">
+            <strong class="headerName">
+                Covid Statistics
+            </strong>
+        </div>
+        <div class="col-md-5" style="display: flex;justify-content: flex-end;">
+            <mat-select *ngIf="!mainLS && !isErrorOccurred" placeholder="Choose a Country" class="form-control"
+                [(ngModel)]="countryName" matTooltipPosition="right" matTooltip="Country : {{countryName}}"
+                matTooltipClass="matTooltipclass1" (selectionChange)="onCountrySelected()">
+                <mat-option value="{{item.key}}" *ngFor="let item of countryList | keyvalue">{{item.key}}</mat-option>
+            </mat-select>
+        </div>
+    </div>
+
+</div>

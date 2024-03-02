@@ -1,0 +1,18 @@
+<div>
+
+  <mat-sidenav-container class="sidenav-container">
+
+    <mat-sidenav #leftSideNav mode="side" opened style="background-image: linear-gradient(to right, #8080ff, #ff8282);border-color: #ff8282;">
+      <app-left-menu></app-left-menu>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <app-header [sidenav]="leftSideNav"> </app-header>
+      <div class="main_content">
+        <div style="padding: 15px;">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
